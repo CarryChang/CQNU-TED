@@ -1,6 +1,6 @@
 ### <center> CQNU-TED     
 ### 
-<div align=center><img width="150" height="150" src="https://github.com/CarryChang/CQNU-TED/blob/master/pic/logo.png"></div>
+<div align=center><img src="https://github.com/CarryChang/CQNU-TED/blob/master/pic/logo.png"></div>
 ### 
 #### 开发意义
 >#### 1. 基于在线个性化学习的需求。慕课网因为种类繁杂，学生并不能根据专业知识需要找到自己的课程学习，并且每所高校教师基本都具有自己的一套学习体系，课堂结束后需要能够上传资料供学生学习的平台（逐步替代QQ群），并能够实时视频播放。
