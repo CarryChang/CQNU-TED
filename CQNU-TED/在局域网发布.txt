@@ -1,0 +1,2 @@
+使用runserver 192.168.191.1:8000命令
+runserver后面为本地ipconfig后的ip地址

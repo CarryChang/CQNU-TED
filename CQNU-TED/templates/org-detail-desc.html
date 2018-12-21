@@ -1,0 +1,22 @@
+{#tempaltes/org-detail-desc.html#}
+{% extends 'org_base.html' %}
+{% load staticfiles %}
+
+<title>{% block title %}学院描述页{% endblock %}</title>
+{% block page_path %}学院描述{% endblock %}
+
+{% block right_form %}
+    <div class="right companycenter layout">
+    <div class="head">
+        <h1>学院介绍</h1>
+        <a class="green fr more" href="org-detail-desc.html">查看更多 > </a>
+    </div>
+    <div class="cont">&nbsp; &nbsp; <p>{{ course_org.desc }}</p>
+        <div class="ue_t" label="Title center" name="tc"
+            style="border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;text-align:center;margin:0px 0px 20px;"><span
+                style="color:#c0504d;"></span></div>
+    </div>
+    </div>
+
+{% endblock %}
+

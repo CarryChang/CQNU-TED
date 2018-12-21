@@ -1,0 +1,185 @@
+{#templates/base.html#}
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>{% block title %}课程学院列表首页{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% block custom_css %}
+    {% endblock %}
+    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}" type="text/javascript"></script>
+</head>
+<body>
+
+<section class="headerwrap ">
+    <header>
+        <div class=" header">
+            <div class="top">
+                <div class="wp">
+                    <div class="fl"><p>
+                        重庆师范大学网络教学平台</p></div>
+                    <!--登录后跳转-->
+                    {% if request.user.is_authenticated %}
+                        <div class="personal">
+                            <dl class="user fr">
+                                <dd>{{ user.username }}<img class="down fr"
+                                                            src="{% static "images/top_down.png" %}"/></dd>
+                                <dt><img width="20" height="20" src="{{ MEDIA_URL }}{{ request.user.image }}"/></dt>
+                            </dl>
+                            <div class="userdetail">
+                                <dl>
+                                    <dt><img width="80" height="80" src="{{ MEDIA_URL }}{{ request.user.image }}"/></dt>
+                                    <dd>
+                                        <h2>{{ request.user.nick_name }}</h2>
+                                        <p>{{ request.user.username }}</p>
+                                    </dd>
+                                </dl>
+                                <div class="btn">
+                                    <a class="personcenter fl" href="{% url 'users:user_info' %}">进入个人中心</a>
+                                    <a class="fr" href="{% url 'logout' %}">退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a style="color:white" class="fr registerbtn" href="{% url 'register' %}">注册</a>
+                        <a style="color:white" class="fr loginbtn" href="{% url 'login' %}">登录</a>
+                    {% endif %}
+
+
+                </div>
+            </div>
+
+            <div class="middle">
+                <div class="wp">
+
+                      <a class="logo" href="/"><img src="{% static 'images/logo/logo.png' %}"/></a>
+                    <div class="searchbox fr">
+                        <div class="selectContainer fl">
+                            <span class="selectOption" id="jsSelectOption" data-value="course">
+                                公开课
+                            </span>
+                            <ul class="selectMenu" id="jsSelectMenu">
+                                <li data-value="course">公开课搜索</li>
+                                <li data-value="org">学院搜索</li>
+                                <li data-value="teacher">讲师搜索</li>
+                            </ul>
+                        </div>
+                        <input id="search_keywords" class="fl" type="text" value="" placeholder="请输入搜索内容"/>
+                        <img class="search_btn fr" id="jsSearchBtn" src="{% static 'images/search_btn.png' %}"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <nav>
+                <div class="nav">
+                    <div class="wp">
+                        <ul>
+                            <li {% if request.path == '/' %}class="active" {% endif %}><a
+                                    href="{% url 'index' %}">首页</a></li>
+                            <li {% if request.path|slice:'7' == '/course' %}class="active"{% endif %}>
+                                <a href="{% url 'course:course_list' %}">
+                                    公开课<img class="hot" src="{% static 'images/nav_hot.png' %}">
+                                </a>
+                            </li>
+                            <li {% if request.path|slice:'12' == '/org/teacher' %}class="active"{% endif %}>
+                                <a href="{% url 'org:teacher_list' %}">讲师介绍</a>
+                            </li>
+                            <li {% if request.path|slice:'9' == '/org/list' %}class="active" {% endif %}><a
+                                    href="{% url 'org:org_list' %}">课程来源</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+</section>
+<!--crumbs start-->
+
+{#面包屑#}
+{% block custom_bread %}
+{% endblock %}
+
+{#正文#}
+{% block content %}
+{% endblock %}
+
+<footer>
+    <div class="footer">
+        <div class="wp">
+            <ul class="cont">
+                <p class="center"> &emsp;</p>
+                <li class="logo"><a href="http://www.cqnu.edu.cn/"><img src="{% static 'images/logo/logo1.png' %}"/></a></li>
+                <li class="code"><img src="{% static 'images/logo/qr.png' %}"/>
+                    <p class="center">扫码访问重庆师范大学官网</p></li>
+                <li class="third"><img class="fl" src="{% static 'images/tell.png' %}"/>
+                    <p class="tell">12345678</p>
+                    <p class="time">周一至周五 9:00-18:00</p></li>
+            </ul>
+        </div>
+        <p class="line"></p>
+        <div class="wp clear">
+            <span class="fl">&emsp;&emsp;&emsp;&emsp;2018重师网络教学平台-在线学习交流 保留所有权利</span>
+            <span class="fr">copyright  2018 ICP备案证书号：蜀ICP备12345号-1</span>
+        </div>
+    </div>
+</footer>
+
+<section>
+    <ul class="sidebar">
+        <li class="totop" ></li>
+    </ul>
+</section>
+
+<script src="{% static 'js/selectUi.js' %}" type='text/javascript'></script>
+<script src="{% static 'js/deco-common.js' %}" type='text/javascript'></script>
+<script type="text/javascript" src="{% static 'js/plugins/laydate/laydate.js' %}"></script>
+<script src="{% static 'js/plugins/layer/layer.js' %}"></script>
+<script src="{% static 'js/plugins/queryCity/js/public.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/unslider.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/plugins/jquery.scrollLoading.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/deco-common.js' %}" type="text/javascript"></script>
+
+<script>
+    $(function () {
+        $('#jsStayBtn').on('click', function () {
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "/org/add_ask/",
+                data: $('#jsStayForm').serialize(),
+                async: true,
+                success: function (data) {
+                    if (data.status == 'success') {
+                        $('#jsStayForm')[0].reset();
+                        alert("提交成功")
+                    } else if (data.status == 'fail') {
+                        $('#jsCompanyTips').html(data.msg)
+                    }
+                },
+            });
+        });
+    })
+
+</script>
+
+{% block custom_js %}{% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+

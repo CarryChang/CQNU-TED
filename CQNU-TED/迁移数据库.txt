@@ -1,0 +1,14 @@
+
+首先：
+python3 manage.py migrate
+将该改动作用到数据库文件，比如产生table之类
+然后：
+python3 manage.py makemigrations
+当makemigrations之后产生了0001_initial.py 文件，你可以查看下该migrations会对应于什么样子的SQL命令
+python manger.py sqlmigrate theapp 0001
+
+创建超级用户
+createsuperuser
+
+修改admin密码：createsuperuser
+admin123

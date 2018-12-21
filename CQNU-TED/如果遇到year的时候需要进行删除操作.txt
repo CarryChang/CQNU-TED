@@ -1,0 +1,1 @@
+删除之前的makemigrations和migrate
