@@ -1,4 +1,4 @@
-### <center> CQNU-TED     
+### <div align=center> CQNU-TED  </div>
 ### 
 ## <div align=center><img src="https://github.com/CarryChang/CQNU-TED/blob/master/pic/logo.png"></div>
 ### 
@@ -10,4 +10,4 @@
 >#### 3. 使用Xadmin进行快速搭建，用户权限定义，课程设置，轮播图，以及具有视频等各类文件共享的功能
    ![logo](https://github.com/CarryChang/CQNU-TED/blob/master/pic/视频上传.png)
 >#### 4. 平台的架构如下所示，可以在线直接观看此在线学习平台的具体信息，详情点击 https://carrychang.github.io/CQNU-TED/
-  ![logo](https://github.com/CarryChang/CQNU-TED/blob/master/pic/技术架构.png)
+  <div align=center><img src="https://github.com/CarryChang/CQNU-TED/blob/master/pic/技术架构.png"></div>
