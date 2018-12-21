@@ -1,4 +1,4 @@
-<center> CQNU-TED </center>
+### <center> CQNU-TED </center>
 ###  <center>![logo](https://github.com/CarryChang/CQNU-TED/blob/master/pic/logo.png)</center>
 ### 
 #### 开发意义
