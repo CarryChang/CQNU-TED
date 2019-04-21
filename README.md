@@ -1,3 +1,4 @@
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 ### <div align=center> CQNU-TED  </div>
 ### 
 ## <div align=center><img src="https://github.com/CarryChang/CQNU-TED/blob/master/pic/logo.png"></div>
